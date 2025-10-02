@@ -64,11 +64,13 @@ public class Main {
         Microwave m1 = new Microwave(0,0);
         Device polyDevice; //E7Q2
         polyDevice = m1; //E7Q3
-        polyDevice.printDescription(); //E7Q4 executes device and then the microwave's implementation as it is referenced
+        polyDevice.printDescription(); //E7Q4 executes the microwave's implementation rather than device as it is referenced
 
-        if (obj instanceof polyDevice) { // Checks type safely
-            Device polyDevice = m1;
-            polyDevice.heatFood(); //E8Q2
+        //polyDevice.heatFood()// E8Q2
+
+        if (polyDevice instanceof Microwave) { // E8Q3
+            Microwave microwaveDevice = (Microwave) polyDevice;
+            ((Microwave) polyDevice).heatFood(); // E8Q4
 
         }
     }
